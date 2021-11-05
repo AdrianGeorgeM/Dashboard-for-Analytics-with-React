@@ -1,0 +1,11 @@
+.greeting__text {
+  font-weight: 500;
+}
+
+.greeting__text--name {
+  color: #e60000;
+}
+
+.greeting {
+  margin-left: 160px;
+}
