@@ -14,8 +14,6 @@ function App() {
     <div className='App'>
       <Header />
       <SideBar />
-      {/* <Greeting /> */}
-
       <Dashboard />
     </div>
   );
