@@ -11,6 +11,8 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
+import BarChartAxis from "./BarChartAxis";
+
 const data = [
   {
     name: "Page A",
@@ -57,11 +59,13 @@ const data = [
 ];
 
 export default class DailyActivity extends Component {
+  constructor(props) {
+    super(props);
+    this.type = this.props.type;
+    this.user = this.props.user;
+    this.endpoint = this.props.endpoint;
+  }
   render() {
-    return (
-      <BarChart width={150} height={40} data={data}>
-        <Bar dataKey='uv' fill='#8884d8' />
-      </BarChart>
-    );
+    return <BarChartAxis user={this.user} endpoint={this.endpoint} />;
   }
 }

@@ -1,8 +1,19 @@
 import React, { Component } from "react";
+import SideBar from "./SideBar";
+import DailyActivity from "../Components/DailyActivity";
+import Greeting from "../Components/Greeting";
+import "../Styles/Dashboard.css";
 
 export class Dashboard extends Component {
   render() {
-    return <div></div>;
+    return (
+      <main className='main'>
+        <Greeting />
+        <div className='main__content'>
+          <DailyActivity />
+        </div>
+      </main>
+    );
   }
 }
 

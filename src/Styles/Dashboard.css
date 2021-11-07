@@ -1,0 +1,10 @@
+.main {
+  grid-area: dashboard;
+  display: flex;
+  flex-direction: column;
+  padding-top: 68px;
+  padding-left: 107px;
+}
+
+.main__content {
+}

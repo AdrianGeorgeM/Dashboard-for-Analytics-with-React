@@ -13,7 +13,7 @@ import PropTypes from "prop-types";
 
 let fetchData = async (user, endpoint = "") => {
   try {
-    let response = await fetch(`http://localhost:3001/user/${user}${endpoint}`);
+    let response = await fetch(`http://localhost:3000/user/${user}${endpoint}`);
 
     let data = await response.json();
     console.log(data);
