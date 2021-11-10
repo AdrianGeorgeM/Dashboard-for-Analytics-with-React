@@ -11,16 +11,12 @@ import PropTypes from "prop-types";
  * It is used in the Api component.
  * */
 
-let fetchData = async (user, endpoint = "") => {
-  try {
-    let response = await fetch(`http://localhost:3000/user/${user}${endpoint}`);
+let fetchData = async (user = "12", endpoint = "/activity") => {
+  let response = await fetch(`http://localhost:3000/user/${user}${endpoint}`);
 
-    let data = await response.json();
-    console.log(data);
-    return data;
-  } catch (error) {
-    console.log(error);
-  }
+  let data = await response.json();
+  // console.log(data);
+  return data;
 };
 
 fetchData.PropTypes = {

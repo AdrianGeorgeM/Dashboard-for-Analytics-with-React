@@ -11,80 +11,6 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import fetchData from "../Api/api";
-const data = [
-  {
-    date: "2000-01",
-    uv: 4000,
-    pv: 2400,
-    amt: 2400,
-  },
-  {
-    date: "2000-02",
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
-  },
-  {
-    date: "2000-03",
-    uv: 2000,
-    pv: 9800,
-    amt: 2290,
-  },
-  {
-    date: "2000-04",
-    uv: 2780,
-    pv: 3908,
-    amt: 2000,
-  },
-  {
-    date: "2000-05",
-    uv: 1890,
-    pv: 4800,
-    amt: 2181,
-  },
-  {
-    date: "2000-06",
-    uv: 2390,
-    pv: 3800,
-    amt: 2500,
-  },
-  {
-    date: "2000-07",
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
-  },
-  {
-    date: "2000-08",
-    uv: 4000,
-    pv: 2400,
-    amt: 2400,
-  },
-  {
-    date: "2000-09",
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
-  },
-  {
-    date: "2000-10",
-    uv: 2000,
-    pv: 9800,
-    amt: 2290,
-  },
-  {
-    date: "2000-11",
-    uv: 2780,
-    pv: 3908,
-    amt: 2000,
-  },
-  {
-    date: "2000-12",
-    uv: 1890,
-    pv: 4800,
-    amt: 2181,
-  },
-];
 
 export class ChartBar extends Component {
   constructor(props) {
@@ -96,8 +22,8 @@ export class ChartBar extends Component {
     const { user } = this.props;
 
     this.state = {
-      data: {}, // data: {name: "", value: ""}
-      loading: true, //loading: true if the data is still being fetched, false otherwise
+      items: {}, // an empty object to store the data fetched from the API
+      loading: false, //because we are not requesting data from the api yet
       error: null, // error: {message: ""},  if there is an error, it will be stored here
     };
   }
@@ -120,14 +46,25 @@ export class ChartBar extends Component {
     const { endpoint } = this.props; //get the endpoint from the props;
     const { user } = this.props; // user is passed as a prop from the parent component
     //Fetch data from the API and store it in the state of the component  / /
-    fetchData(endpoint, user).then((data) => {
-      //data is an array of objects
-      this.setState({
-        //set the state of the component to the data fetched from the API
-        data: data,
-        loading: false, //set loading to false, since the data has been fetched
-      });
-    });
+    fetchData(endpoint, user).then(
+      (response) => {
+        //data is an array of objects
+
+        this.setState({
+          items: response.data.sessions,
+          loading: true, //because we are requesting data from the api now
+        });
+      },
+      // Note: it's important to handle errors here
+      // instead of a catch() block so that we don't swallow
+      // exceptions from actual bugs in components.
+      (error) => {
+        this.setState({
+          loaded: true,
+          error: console.log(`error`, error),
+        });
+      }
+    );
   }
 
   getDay(date) {
@@ -165,22 +102,20 @@ export class ChartBar extends Component {
   };
 
   render() {
+    const { items, loading, error } = this.state;
     return (
       <div>
         <h1>sfvsdf</h1>
-        <ResponsiveContainer width='100%' height='100%'>
-          <BarChart
-            width={500}
-            height={300}
-            data={data}
-            margin={{
-              top: 5,
-              right: 30,
-              left: 20,
-              bottom: 5,
-            }}
-          ></BarChart>
-        </ResponsiveContainer>
+
+        <BarChart width={730} height={250} data={this.state.items}>
+          <CartesianGrid strokeDasharray='3 3' />
+          <XAxis dataKey='name' />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Bar dataKey='kilogram' fill='#8884d8' />
+          <Bar dataKey='calories' fill='#82ca9d' />
+        </BarChart>
       </div>
     );
   }
