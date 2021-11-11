@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {
+  ResponsiveContainer,
   BarChart,
   Bar,
   Cell,
@@ -8,9 +9,9 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
-  ResponsiveContainer,
 } from "recharts";
 import fetchData from "../Api/api";
+import "../Styles/BarChart.css";
 
 export class ChartBar extends Component {
   constructor(props) {
@@ -69,54 +70,95 @@ export class ChartBar extends Component {
 
   getDay(date) {
     //returns the day of the week
-    const day = new Date(date).getDay(); //Gets the day of the week, using local time.
+    const day = new Date(date).getDate(); //Gets the day of the week, using local time.
     return day;
   }
 
-  monthTickFormatter = (tick) => {
-    const date = new Date(tick);
-
-    return date.getMonth() + 1;
+  renderColorfulLegendText = (value) => {
+    //The formatter function of each span in legend.
+    return (
+      <span
+        style={{
+          color: "#74798C",
+          paddingLeft: "10px",
+          verticalAlign: "middle",
+          fontSize: "15px",
+          lineHeight: "25px",
+          fontWeight: "500",
+        }}
+      >
+        {value}
+      </span>
+    );
   };
-
-  renderQuarterTick = (tickProps) => {
-    const { x, y, payload } = tickProps;
-    const { value, offset } = payload;
-    const date = new Date(value);
-    const month = date.getMonth();
-    const quarterNo = Math.floor(month / 3) + 1;
-    const isMidMonth = month % 3 === 1;
-
-    if (month % 3 === 1) {
-      return <text x={x} y={y - 4} textAnchor='middle'>{`Q${quarterNo}`}</text>;
-    }
-
-    const isLast = month === 11;
-
-    if (month % 3 === 0 || isLast) {
-      const pathX = Math.floor(isLast ? x + offset : x - offset) + 0.5;
-
-      return <path d={`M${pathX},${y - 4}v${-35}`} stroke='red' />;
+  customTooltip = ({ active, payload, label }) => {
+    if (active && payload && payload.length) {
+      return (
+        <div className='custom-tooltip'>
+          <p className='custom-tooltip__kg'>{`${payload[0].value} kg`}</p>
+          <p className='custom-tooltip__callories'>{`${payload[1].value} kCal`}</p>
+        </div>
+      );
     }
     return null;
   };
-
   render() {
     const { items, loading, error } = this.state;
     return (
-      <div>
-        <h1>sfvsdf</h1>
-
-        <BarChart width={730} height={250} data={this.state.items}>
+      <ResponsiveContainer width='100%' height='100%'>
+        <BarChart
+          width={500}
+          height={300}
+          data={this.state.items}
+          margin={{
+            top: 5,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
+        >
           <CartesianGrid strokeDasharray='3 3' />
-          <XAxis dataKey='name' />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Bar dataKey='kilogram' fill='#8884d8' />
-          <Bar dataKey='calories' fill='#82ca9d' />
+          <XAxis
+            dataKey='day'
+            tickFormatter={this.getDay} //format the tick labels to show the day of the week instead of the number of the day
+            tick={{ transform: "translate(0,10)" }} //move the tick to the bottom
+            axisLine={false}
+            axisLine={{ stroke: "#DEDEDE" }} //change the color of the axis
+            scale='1'
+          />
+
+          <YAxis orientation='right' tick={{ transform: "translate(30,0)" }} />
+          <Tooltip
+            // position={{ y: 56 }}
+            content={this.customTooltip} //CustomContentOfTooltip
+          />
+          <Legend
+            iconSize={8}
+            iconType='circle'
+            verticalAlign='top'
+            align='right'
+            wrapperStyle={{
+              //React inline style
+              paddingBottom: "47px",
+            }}
+            formatter={this.renderColorfulLegendText}
+          />
+          <Bar
+            dataKey='kilogram'
+            name='Weight (kg)'
+            fill='#282D30'
+            radius={[10, 10, 0, 0]}
+            barSize={10} //The width or height of each bar.
+          />
+          <Bar
+            dataKey='calories'
+            name='Burned calories (kCal)'
+            fill='#E60000'
+            radius={[10, 10, 0, 0]}
+            barSize={10} //The width or height of each bar.
+          />
         </BarChart>
-      </div>
+      </ResponsiveContainer>
     );
   }
 }
