@@ -31,8 +31,6 @@ export class UserPerformance extends Component {
   render() {
     return (
       <div className='infoCards'>
-        <h2>Hello Cards</h2>
-        <div style={{ border: "3px solid green" }}></div>
         <UserInfo
           user={this.user}
           data={this.state.items.calorieCount}

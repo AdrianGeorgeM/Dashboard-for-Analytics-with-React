@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 // change name of the images in alias of keys of the count
+import "../Styles/UserInfo.css";
 import calorieCount from "../Assets/calories_icon.png";
 import proteinCount from "../Assets/carbs_icon.png";
 import carbohydrateCount from "../Assets/cheeseburger.png";
@@ -23,7 +24,7 @@ export class UserInfo extends Component {
   render() {
     return (
       <div className='user-info'>
-        <img src={this.images[this.count]} alt='' className='card__image' />
+        <img src={this.images[this.count]} alt='' className='user__image' />
 
         <div className='user__text'>
           <p className='user__text-status'>

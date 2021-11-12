@@ -1,8 +1,9 @@
-.infoCard {
+.infoCards {
   display: flex;
+  grid-area: infoCards;
   flex-direction: column;
   justify-content: space-between;
 
   margin-left: 10px;
-  grid-area: infoCards;
+  background-color: #fff;
 }
