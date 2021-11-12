@@ -3,6 +3,7 @@ import SideBar from "./SideBar";
 import DailyActivity from "../Components/DailyActivity";
 import Greeting from "../Components/Greeting";
 import "../Styles/Dashboard.css";
+import UserPerformance from "./UserPerformance";
 
 export class Dashboard extends Component {
   render() {
@@ -11,6 +12,7 @@ export class Dashboard extends Component {
         <Greeting />
         <div className='main__content'>
           <DailyActivity />
+          <UserPerformance user={this.user} />
         </div>
       </main>
     );

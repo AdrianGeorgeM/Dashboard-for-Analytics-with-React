@@ -1,0 +1,14 @@
+.dailyActivity {
+  grid-area: daily;
+  min-width: 300px;
+  height: 320px;
+  padding: 24px 32px;
+  position: relative;
+}
+.dailyActivity h2 {
+  position: absolute;
+  top: 30px;
+  font-size: 15px;
+  line-height: 24px;
+  margin: 0;
+}

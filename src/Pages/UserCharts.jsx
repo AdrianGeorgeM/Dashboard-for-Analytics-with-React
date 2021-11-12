@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// A component that wraps the three smaller charts into a block
+// A component to display the 3 user's charts
 
 export class UserCharts extends Component {
   render() {

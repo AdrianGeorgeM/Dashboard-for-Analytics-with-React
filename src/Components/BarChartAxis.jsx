@@ -21,7 +21,8 @@ export class ChartBar extends Component {
     // user is passed as a prop from the parent component
     // this.user = props.user;
     const { user } = this.props;
-
+    this.endpoint = this.props.endpoint;
+    this.user = this.props.user;
     this.state = {
       items: {}, // an empty object to store the data fetched from the API
       loading: false, //because we are not requesting data from the api yet
@@ -47,7 +48,7 @@ export class ChartBar extends Component {
     const { endpoint } = this.props; //get the endpoint from the props;
     const { user } = this.props; // user is passed as a prop from the parent component
     //Fetch data from the API and store it in the state of the component  / /
-    fetchData(endpoint, user).then(
+    fetchData(user, endpoint).then(
       (response) => {
         //data is an array of objects
 
@@ -55,6 +56,9 @@ export class ChartBar extends Component {
           items: response.data.sessions,
           loading: true, //because we are requesting data from the api now
         });
+        {
+          console.log(response.data.sessions);
+        }
       },
       // Note: it's important to handle errors here
       // instead of a catch() block so that we don't swallow
@@ -81,7 +85,7 @@ export class ChartBar extends Component {
         style={{
           color: "#74798C",
           paddingLeft: "10px",
-          verticalAlign: "middle",
+          verticalAlign: "top",
           fontSize: "15px",
           lineHeight: "25px",
           fontWeight: "500",
@@ -91,6 +95,13 @@ export class ChartBar extends Component {
       </span>
     );
   };
+
+  /**
+   *
+   * @param {object} props
+   * @returns {JSX.Element}
+   * @returns {HTMLDivElement}
+   */
   customTooltip = ({ active, payload, label }) => {
     if (active && payload && payload.length) {
       return (
@@ -144,11 +155,12 @@ export class ChartBar extends Component {
             iconType='circle'
             verticalAlign='top'
             align='right'
+            // format of wrapperStyle is the same as React inline style
             wrapperStyle={{
               //React inline style
               paddingBottom: "47px",
             }}
-            formatter={this.renderColorfulLegendText}
+            formatter={this.renderColorfulLegendText} // change the color
           />
           <Bar
             dataKey='kilogram'
