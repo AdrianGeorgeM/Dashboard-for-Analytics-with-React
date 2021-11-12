@@ -117,17 +117,24 @@ export class ChartBar extends Component {
             bottom: 5,
           }}
         >
-          <CartesianGrid strokeDasharray='3 3' />
+          <CartesianGrid strokeDasharray='1 2' vertical={false} />
           <XAxis
             dataKey='day'
             tickFormatter={this.getDay} //format the tick labels to show the day of the week instead of the number of the day
             tick={{ transform: "translate(0,10)" }} //move the tick to the bottom
-            axisLine={false}
+            axisLine={false} //hide the axis line
+            tickLine={false} //hide the tick line
             axisLine={{ stroke: "#DEDEDE" }} //change the color of the axis
             scale='1'
           />
 
-          <YAxis orientation='right' tick={{ transform: "translate(30,0)" }} />
+          <YAxis
+            strokeDasharray='1 2'
+            orientation='right'
+            axisLine={false} //hide the axis line
+            tickLine={false} //hide the tick line
+            tick={{ transform: "translate(30,0)" }}
+          />
           <Tooltip
             // position={{ y: 56 }}
             content={this.customTooltip} //CustomContentOfTooltip
