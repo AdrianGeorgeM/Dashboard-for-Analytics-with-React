@@ -1,0 +1,17 @@
+.user__charts {
+  grid-area: userCharts;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 25px;
+  margin-bottom: 60px;
+}
+
+.chart {
+  flex-basis: 35%; /*35% of the parent width  (100% / 3)    (100% / 3)  = 33.33%    */
+  height: 263px;
+  position: relative;
+  border: 1px solid blue;
+}

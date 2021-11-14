@@ -56,9 +56,6 @@ export class ChartBar extends Component {
           items: response.data.sessions,
           loading: true, //because we are requesting data from the api now
         });
-        {
-          console.log(response.data.sessions);
-        }
       },
       // Note: it's important to handle errors here
       // instead of a catch() block so that we don't swallow
@@ -148,7 +145,7 @@ export class ChartBar extends Component {
           />
           <Tooltip
             // position={{ y: 56 }}
-            content={this.customTooltip} //CustomContentOfTooltip
+            content={this.customTooltip} //CustomContentOfTooltip  //CustomContentOfTooltip
           />
           <Legend
             iconSize={8}

@@ -12,5 +12,5 @@
   display: grid;
   grid-template-areas:
     "daily infoCards"
-    "daily infoCards";
+    "userCharts infoCards";
 }

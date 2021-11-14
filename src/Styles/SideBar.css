@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 90vh;
+  height: 100vh;
   /*replace width with width: 100px;
    grid-template-columns :100px
     */

@@ -4,6 +4,8 @@ import DailyActivity from "../Components/DailyActivity";
 import Greeting from "../Components/Greeting";
 import "../Styles/Dashboard.css";
 import UserPerformance from "./UserPerformance";
+import ChartLine from "../Components/ AverageLineChart";
+import UserCharts from "./UserCharts";
 
 export class Dashboard extends Component {
   render() {
@@ -13,6 +15,8 @@ export class Dashboard extends Component {
         <div className='main__content'>
           <DailyActivity />
           <UserPerformance user={this.user} />
+          {/* <ChartLine /> */}
+          <UserCharts />
         </div>
       </main>
     );
