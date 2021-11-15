@@ -25,12 +25,16 @@ export class UserCharts extends Component {
             endpoint={"/average-sessions"}
           />
         </div>
+        <div className='chart'>
+          <ChartRadar
+            type='radarChart'
+            user={this.user}
+            endpoint={"/performance"}
+          />
+        </div>
       </div>
     );
   }
 }
 
 export default UserCharts;
-//  <div>
-//
-//       </div>

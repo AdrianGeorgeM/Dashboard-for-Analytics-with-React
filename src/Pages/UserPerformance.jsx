@@ -55,7 +55,6 @@ export class UserPerformance extends Component {
           unit='g'
           count='lipidCount'
         />
-        {console.log(this.state.items)}
       </div>
     );
   }

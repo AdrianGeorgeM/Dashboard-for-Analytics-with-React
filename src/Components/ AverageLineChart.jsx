@@ -28,6 +28,8 @@ export class ChartLine extends Component {
     };
   }
   componentDidMount() {
+    const { endpoint } = this.props; //get the endpoint from the props;
+    const { user } = this.props; // user is passed as a prop from the parent component
     fetchData((this.user = "18"), (this.endpoint = "average-sessions")).then(
       (response) => {
         this.setState({
@@ -60,7 +62,7 @@ export class ChartLine extends Component {
     return (
       <ResponsiveContainer width='100%' height='100%'>
         <LineChart
-          margin={{ top: 90, right: 0, bottom: 17, left: 0 }}
+          margin={{ top: 90, right: 0, bottom: 17, left: 0 }} //this is the margin of the chart
           data={this.state.items}
           style={{
             borderRadius: "7px",

@@ -11,7 +11,7 @@
 
 .chart {
   flex-basis: 35%; /*35% of the parent width  (100% / 3)    (100% / 3)  = 33.33%    */
-  height: 263px;
+  height: 178px;
   position: relative;
   border: 1px solid blue;
 }
