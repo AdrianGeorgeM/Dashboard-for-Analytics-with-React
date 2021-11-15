@@ -6,7 +6,7 @@ export class Greeting extends Component {
     return (
       <div className='greeting'>
         <h1 className='greeting__text'>
-          Hello <span className='greeting__text--name'>Tomas</span>
+          Hello <span className='greeting__text--name'>{this.props.name}</span>
         </h1>
         <p className='greeting__status'>
           Congratulations! You reached yesterday’s goal! 👏
