@@ -15,16 +15,16 @@ export class SideBar extends Component {
     return (
       <div className='sidebar__container'>
         <div className='sidebar__icons'>
-          <a href='#'>
+          <a href='/#'>
             <img src={yoga} alt='' className='sidebar__icon'></img>
           </a>
-          <a href='#'>
+          <a href='/#'>
             <img src={swim} alt='' className='sidebar__icon'></img>
           </a>
-          <a href='#'>
+          <a href='/#'>
             <img src={cycle} alt='' className='sidebar__icon'></img>
           </a>
-          <a href='#'>
+          <a href='/#'>
             <img src={gym} alt='' className='sidebar__icon'></img>
           </a>
         </div>
