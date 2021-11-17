@@ -25,14 +25,12 @@ export class ChartRadar extends Component {
   componentDidMount() {
     const { endpoint } = this.props;
     const { user } = this.props;
-    fetchData((this.user = "12"), (this.endpoint = "performance")).then(
-      (response) => {
-        this.setState({
-          items: response.data,
-          loading: false,
-        });
-      }
-    );
+    fetchData(this.user, this.endpoint).then((response) => {
+      this.setState({
+        items: response.data,
+        loading: false,
+      });
+    });
   }
 
   mapData({ kind, data }) {

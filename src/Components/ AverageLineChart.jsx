@@ -30,15 +30,13 @@ export class ChartLine extends Component {
   componentDidMount() {
     const { endpoint } = this.props; //get the endpoint from the props;
     const { user } = this.props; // user is passed as a prop from the parent component
-    fetchData((this.user = "18"), (this.endpoint = "average-sessions")).then(
-      (response) => {
-        this.setState({
-          items: response.data.sessions,
-          loading: false,
-        });
-        // console.log(response.data);
-      }
-    );
+    fetchData(this.user, this.endpoint).then((response) => {
+      this.setState({
+        items: response.data.sessions,
+        loading: false,
+      });
+      // console.log(response.data);
+    });
   }
 
   weekDay(day) {

@@ -21,7 +21,7 @@ export class UserPerformance extends Component {
   }
 
   componentDidMount() {
-    fetchData((this.user = "18")).then((response) => {
+    fetchData(this.user, this.endpoint).then((response) => {
       this.setState({
         items: response.data.keyData,
         loading: false,

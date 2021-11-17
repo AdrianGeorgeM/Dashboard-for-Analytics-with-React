@@ -26,7 +26,7 @@ export default class DailyActivity extends Component {
     return (
       <div className='dailyActivity'>
         <h2>Daily activity</h2>
-        <BarChartAxis user={12} endpoint='activity' />
+        <BarChartAxis user={this.user} endpoint='activity' />
       </div>
     );
   }

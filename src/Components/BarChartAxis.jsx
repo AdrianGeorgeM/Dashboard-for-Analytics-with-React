@@ -48,7 +48,7 @@ export class ChartBar extends Component {
     const { endpoint } = this.props; //get the endpoint from the props;
     const { user } = this.props; // user is passed as a prop from the parent component
     //Fetch data from the API and store it in the state of the component  / /
-    fetchData(user, endpoint).then(
+    fetchData(this.user, this.endpoint).then(
       (response) => {
         //data is an array of objects
 
