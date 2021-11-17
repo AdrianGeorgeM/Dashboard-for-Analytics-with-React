@@ -16,9 +16,9 @@ export class Dashboard extends Component {
   render() {
     return (
       <main className='main'>
-        <Greeting />
+        <Greeting user={this.user} />
         <div className='main__content'>
-          <DailyActivity />
+          <DailyActivity user={this.user} />
           <UserPerformance user={this.user} />
           {/* <ChartLine /> */}
           <UserCharts user={this.user} />
