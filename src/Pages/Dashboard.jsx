@@ -8,6 +8,11 @@ import ChartLine from "../Components/ AverageLineChart";
 import UserCharts from "./UserCharts";
 
 export class Dashboard extends Component {
+  constructor(props) {
+    super(props);
+    this.user = this.props.user;
+    this.name = this.props.name;
+  }
   render() {
     return (
       <main className='main'>
@@ -16,7 +21,7 @@ export class Dashboard extends Component {
           <DailyActivity />
           <UserPerformance user={this.user} />
           {/* <ChartLine /> */}
-          <UserCharts />
+          <UserCharts user={this.user} />
         </div>
       </main>
     );

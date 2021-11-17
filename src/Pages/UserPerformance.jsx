@@ -60,8 +60,8 @@ export class UserPerformance extends Component {
   }
 }
 
-UserPerformance.propTypes = {
-  user: PropTypes.string.isRequired,
-};
+// UserPerformance.propTypes = {
+//   user: PropTypes.string.isRequired,
+// };
 
 export default UserPerformance;

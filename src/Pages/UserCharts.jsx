@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { LineChart } from "recharts";
 import ChartLine from "../Components/ AverageLineChart";
 import ChartRadar from "../Components/PerformanceRadarChart";
+import ChartRadial from "../Components/ScoreRadialBarChart";
 import "../Styles/UserCharts.css";
 // A component to display the 3 user's charts
 
@@ -28,6 +29,15 @@ export class UserCharts extends Component {
         <div className='chart'>
           <ChartRadar
             type='radarChart'
+            user={this.user}
+            endpoint={"/performance"}
+          />
+        </div>
+
+        <div className='chart'>
+          <h3 className='radialChart__title'>Score</h3>
+          <ChartRadial
+            type='radialChart'
             user={this.user}
             endpoint={"/performance"}
           />
