@@ -87,8 +87,8 @@ export class ChartRadial extends Component {
   }
 
   componentDidMount() {
-    const { endpoint } = this.props;
-    const { user } = this.props;
+    // const { endpoint } = this.props;
+    // const { user } = this.props;
     fetchData(this.user, this.endpoint).then((response) => {
       this.setState({
         items: response.data,

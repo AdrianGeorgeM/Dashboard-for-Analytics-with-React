@@ -3,7 +3,6 @@ import {
   ResponsiveContainer,
   BarChart,
   Bar,
-  Cell,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -29,10 +28,10 @@ export class ChartBar extends Component {
   constructor(props) {
     super(props); //Call the constructor of the parent class
     //set the state of the component to an empty object
-    const { endpoint } = this.props; //get the endpoint from the props;
+    // const { endpoint } = this.props; //get the endpoint from the props;
     // user is passed as a prop from the parent component
     // this.user = props.user;
-    const { user } = this.props;
+    // const { user } = this.props;
     this.endpoint = this.props.endpoint;
     this.user = this.props.user;
     this.state = {
@@ -57,8 +56,8 @@ export class ChartBar extends Component {
     //The componentDidMount() method is called after the component is rendered for the first time. It is called before the render() method.
     // This is a good place to set up a timer or fetch data from the server. If you need to load data after the initial rendering, you should use componentDidUpdate() instead.
     //when the component is mounted, fetch the data
-    const { endpoint } = this.props; //get the endpoint from the props;
-    const { user } = this.props; // user is passed as a prop from the parent component
+    // const { endpoint } = this.props; //get the endpoint from the props;
+    // const { user } = this.props; // user is passed as a prop from the parent component
     //Fetch data from the API and store it in the state of the component  / /
     fetchData(this.user, this.endpoint).then(
       (response) => {
@@ -123,7 +122,7 @@ export class ChartBar extends Component {
     return null;
   };
   render() {
-    const { items, loading, error } = this.state;
+    // const { items, loading, error } = this.state;
     return (
       <ResponsiveContainer width='100%' height='100%'>
         <BarChart
@@ -144,7 +143,7 @@ export class ChartBar extends Component {
             tick={{ transform: "translate(0,10)" }} //move the tick to the bottom
             axisLine={false} //hide the axis line
             tickLine={false} //hide the tick line
-            axisLine={{ stroke: "#DEDEDE" }} //change the color of the axis
+            // axisLine={{ stroke: "#DEDEDE" }} //change the color of the axis
             scale='1'
           />
 

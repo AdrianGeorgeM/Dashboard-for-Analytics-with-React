@@ -8,10 +8,10 @@ export class UserPerformance extends Component {
   constructor(props) {
     super(props); //Call the constructor of the parent class
     //set the state of the component to an empty object
-    const { endpoint } = this.props; //get the endpoint from the props;
-    // user is passed as a prop from the parent component
-    // this.user = props.user;
-    const { user } = this.props;
+    // const { endpoint } = this.props; //get the endpoint from the props;
+    // // user is passed as a prop from the parent component
+    // // this.user = props.user;
+    // const { user } = this.props;
     this.user = this.props.user;
     this.state = {
       items: {}, // an empty object to store the data fetched from the API

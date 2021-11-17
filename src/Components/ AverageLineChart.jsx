@@ -1,14 +1,5 @@
 import React, { Component } from "react";
-import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-} from "recharts";
+import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from "recharts";
 import PropTypes from "prop-types";
 import fetchData from "../Api/api";
 import "../Styles/AverageLineCharts.css";
@@ -25,9 +16,8 @@ export class ChartLine extends Component {
   constructor(props) {
     super(props);
 
-    const { endpoint } = this.props;
-
-    const { user } = this.props;
+    // const { endpoint } = this.props;
+    // const { user } = this.props;
     this.endpoint = this.props.endpoint;
     this.user = this.props.user;
     this.state = {
@@ -44,8 +34,8 @@ export class ChartLine extends Component {
    *
    */
   componentDidMount() {
-    const { endpoint } = this.props; //get the endpoint from the props;
-    const { user } = this.props; // user is passed as a prop from the parent component
+    // const { endpoint } = this.props; //get the endpoint from the props;
+    // const { user } = this.props; // user is passed as a prop from the parent component
     fetchData(this.user, this.endpoint).then((response) => {
       this.setState({
         items: response.data.sessions,

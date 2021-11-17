@@ -36,7 +36,7 @@ export class App extends Component {
     });
   }
   render() {
-    const { error, isLoaded, data } = this.state;
+    // const { error, isLoaded, data } = this.state;
     return (
       <div className='App'>
         <Header user={this.user} />
