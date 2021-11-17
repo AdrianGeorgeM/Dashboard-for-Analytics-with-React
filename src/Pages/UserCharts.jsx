@@ -23,24 +23,20 @@ export class UserCharts extends Component {
           <ChartLine
             type='lineChart'
             user={this.user}
-            endpoint={"/average-sessions"}
+            endpoint={"average-sessions"}
           />
         </div>
         <div className='chart'>
           <ChartRadar
             type='radarChart'
             user={this.user}
-            endpoint={"/performance"}
+            endpoint={"performance"}
           />
         </div>
 
         <div className='chart'>
           <h3 className='radialChart__title'>Score</h3>
-          <ChartRadial
-            type='radialChart'
-            user={this.user}
-            endpoint={"/performance"}
-          />
+          <ChartRadial type='radialChart' user={this.user} />
         </div>
       </div>
     );
