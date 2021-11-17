@@ -18,10 +18,8 @@
 
 .radialChart__title {
   position: absolute;
-  /* margin: 0; */
   top: 10%;
   left: 15%;
-  font-family: Roboto;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
