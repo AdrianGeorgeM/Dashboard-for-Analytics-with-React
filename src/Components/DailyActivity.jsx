@@ -1,19 +1,18 @@
 import React, { Component } from "react";
-import {
-  BarChart,
-  Bar,
-  Cell,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-} from "recharts";
+import PropTypes from "prop-types";
 
 import BarChartAxis from "./BarChartAxis";
 import "../Styles/DailyActivity.css";
-import UserPerformance from "../Pages/UserPerformance";
+
+/**
+ * DailyActivity component
+ * @extends Component
+ * @param {object} props
+ * @returns {object} JSX
+ * @constructor
+ * @class DailyActivity
+ *
+ */
 
 export default class DailyActivity extends Component {
   constructor(props) {
@@ -31,3 +30,6 @@ export default class DailyActivity extends Component {
     );
   }
 }
+DailyActivity.propTypes = {
+  user: PropTypes.string.isRequired,
+};

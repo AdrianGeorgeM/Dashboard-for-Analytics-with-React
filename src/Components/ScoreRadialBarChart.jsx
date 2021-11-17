@@ -6,7 +6,16 @@ import {
   Cell,
   ResponsiveContainer,
 } from "recharts";
+import PropTypes from "prop-types";
 import fetchData from "../Api/api";
+
+/**
+ * ScoreRadialBarChart
+ * @class ScoreRadialBarChart
+ * @extends {Component}
+ * @param {object} props
+ * @returns {object}
+ */
 export class ChartRadial extends Component {
   constructor(props) {
     super(props);
@@ -132,3 +141,7 @@ export class ChartRadial extends Component {
 }
 
 export default ChartRadial;
+
+ChartRadial.propTypes = {
+  user: PropTypes.string.isRequired,
+};

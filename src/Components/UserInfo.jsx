@@ -6,7 +6,12 @@ import calorieCount from "../Assets/calories_icon.png";
 import proteinCount from "../Assets/carbs_icon.png";
 import carbohydrateCount from "../Assets/cheeseburger.png";
 import lipidCount from "../Assets/protein_icon.png";
-
+/**
+ * @class UserInfo
+ * @extends {Component}
+ * @description UserInfo component
+ * @param {object} props
+ */
 export class UserInfo extends Component {
   constructor(props) {
     super(props);
@@ -51,3 +56,10 @@ UserInfo.propTypes = {
   data: PropTypes.number,
 };
 export default UserInfo;
+
+UserInfo.propTypes = {
+  user: PropTypes.string,
+  count: PropTypes.string,
+  data: PropTypes.number,
+  unit: PropTypes.string,
+};

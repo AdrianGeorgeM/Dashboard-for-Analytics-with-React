@@ -4,11 +4,9 @@
   grid-area: dashboard;
   padding-top: 68px;
   padding-left: 107px;
-  border: 5px solid yellow;
 }
 
 .main__content {
-  border: 5px solid blue;
   display: grid;
   grid-template-areas:
     "daily infoCards"

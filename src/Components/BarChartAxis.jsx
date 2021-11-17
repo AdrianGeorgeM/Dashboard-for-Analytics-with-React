@@ -10,9 +10,21 @@ import {
   Tooltip,
   Legend,
 } from "recharts";
+import PropTypes from "prop-types";
 import fetchData from "../Api/api";
 import "../Styles/BarChart.css";
 
+/**
+ * BarChartAxis component
+ * @extends Component
+ * @param {object} props
+ * @param {object} props.data
+ * @param {string} props.data.name
+ * @param {number} props.data.value
+ * @param {string} props.data.color
+ * @param {string} props.data.fill
+ *
+ */
 export class ChartBar extends Component {
   constructor(props) {
     super(props); //Call the constructor of the parent class
@@ -180,3 +192,8 @@ export class ChartBar extends Component {
 }
 
 export default ChartBar;
+ChartBar.propTypes = {
+  endpoint: PropTypes.string.isRequired,
+
+  user: PropTypes.string.isRequired,
+};

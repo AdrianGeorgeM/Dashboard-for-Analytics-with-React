@@ -4,8 +4,10 @@ import "../Styles/Header.css";
 
 /**
  * Header component and it renders the nav element
- * @Component
- * @return {Component} - JSX React Component
+ * @class Header
+ * @extends {Component}
+ * @returns {JSX} Header component with nav element and logo image element
+ *
  */
 export class Header extends Component {
   render() {

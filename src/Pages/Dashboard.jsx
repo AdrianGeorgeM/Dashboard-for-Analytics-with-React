@@ -1,18 +1,25 @@
 import React, { Component } from "react";
-import SideBar from "./SideBar";
+import PropTypes from "prop-types";
 import DailyActivity from "../Components/DailyActivity";
 import Greeting from "../Components/Greeting";
 import "../Styles/Dashboard.css";
 import UserPerformance from "./UserPerformance";
-import ChartLine from "../Components/ AverageLineChart";
-import UserCharts from "./UserCharts";
 
+import UserCharts from "./UserCharts";
+/**
+ * @class Dashboard
+ * @extends {Component}
+ * @description Dashboard page
+ * @param {object} props
+ * @param {object} props.user
+ *
+ */
 export class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.user = this.props.user;
-    this.name = this.props.name;
   }
+
   render() {
     return (
       <main className='main'>
@@ -29,3 +36,6 @@ export class Dashboard extends Component {
 }
 
 export default Dashboard;
+Dashboard.propTypes = {
+  user: PropTypes.string.isRequired,
+};

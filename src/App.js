@@ -1,10 +1,19 @@
 import "./App.css";
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import Header from "./Pages/Header";
 import SideBar from "./Pages/SideBar";
-import Greeting from "./Components/Greeting";
+
 import Dashboard from "./Pages/Dashboard";
 import fetchData from "./Api/api";
+
+/**
+ * @class App // App is the main component of the application which is rendered in the index.html file and contains the Header and SideBar components.
+ * @extends {Component} // App is a subclass of Component.
+ * @param {object} props // props is an object that contains the properties of the App component.
+ * @param {object} state // state is an object that contains the state of the App component.
+ * @returns {Component} // returns an object that contains the App component.
+ */
 
 export class App extends Component {
   constructor(props) {
@@ -19,8 +28,6 @@ export class App extends Component {
     };
   }
   componentDidMount() {
-    const { endpoint } = this.props;
-    const { user } = this.props;
     fetchData(this.user, this.endpoint).then((response) => {
       this.setState({
         items: response.data,
@@ -41,3 +48,7 @@ export class App extends Component {
 }
 
 export default App;
+
+App.propTypes = {
+  user: PropTypes.string.isRequired,
+};

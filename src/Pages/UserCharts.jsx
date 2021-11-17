@@ -1,11 +1,18 @@
 import React, { Component } from "react";
-import { LineChart } from "recharts";
 import ChartLine from "../Components/ AverageLineChart";
 import ChartRadar from "../Components/PerformanceRadarChart";
 import ChartRadial from "../Components/ScoreRadialBarChart";
+import PropTypes from "prop-types";
 import "../Styles/UserCharts.css";
-// A component to display the 3 user's charts
 
+/**
+ * @class UserCharts
+ * @extends {Component}
+ * @description A component to display the 3 user's charts
+ * @param {object} props
+ * @returns {object} JSX
+ *
+ */
 export class UserCharts extends Component {
   constructor(props) {
     super(props);
@@ -44,3 +51,6 @@ export class UserCharts extends Component {
 }
 
 export default UserCharts;
+UserCharts.propTypes = {
+  user: PropTypes.string.isRequired,
+};

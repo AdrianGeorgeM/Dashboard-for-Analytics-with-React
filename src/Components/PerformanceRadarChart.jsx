@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import {
   Radar,
   RadarChart,
@@ -8,6 +9,12 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import fetchData from "../Api/api";
+/**
+ * @class PerformanceRadarChart
+ * @extends {Component}
+ * @description
+ * This class is used to render the radar chart for the performance of the user
+ */
 
 export class ChartRadar extends Component {
   constructor(props) {
@@ -32,7 +39,13 @@ export class ChartRadar extends Component {
       });
     });
   }
-
+  /**
+   *
+   * @param {object} items
+   * @description
+   * This function is used to map the data received from the api to a new array of objects with the kind and value properties
+   * @returns {array} dataReceived - array of objects with the kind and value properties
+   */
   mapData({ kind, data }) {
     let dataRceived = []; //[{ kind: "", value: 0 }];
     if (data) {
@@ -50,10 +63,17 @@ export class ChartRadar extends Component {
     }
     return dataRceived; //return the array
   }
-
+  /**
+   *
+   * @param {object} items
+   * @description
+   * This function is used to render the radar chart
+   * @returns {object}
+   *
+   */
   render() {
     let dataReceived = this.mapData(this.state.items); //map the data received from the api to a new array of objects with the kind and value properties
-    console.log(dataReceived);
+
     return (
       <ResponsiveContainer width='100%' height='100%'>
         <RadarChart
@@ -84,3 +104,7 @@ export class ChartRadar extends Component {
 }
 
 export default ChartRadar;
+ChartRadar.propTypes = {
+  endpoint: PropTypes.string.isRequired,
+  user: PropTypes.string.isRequired,
+};

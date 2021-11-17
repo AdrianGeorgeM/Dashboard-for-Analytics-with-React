@@ -9,8 +9,17 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
+import PropTypes from "prop-types";
 import fetchData from "../Api/api";
 import "../Styles/AverageLineCharts.css";
+
+/**
+ * @description: This is the AverageLineChart component. It is responsible for displaying the average line chart.
+ * @param {string} data - The data that is passed to the component.
+ * @param {string} title - The title that is passed to the component.
+ * @param {object} props - The props passed to the component from the parent component.
+ * @returns {object} - The AverageLineChart component to be rendered.
+ */
 
 export class ChartLine extends Component {
   constructor(props) {
@@ -27,6 +36,13 @@ export class ChartLine extends Component {
       error: null,
     };
   }
+
+  /**
+   * @description: This is the custom tooltip that is used to display the data on the tooltip
+   * @param {object} props - The props passed to the component from the parent component.
+   * //@returns {object} - The custom tooltip component to be rendered.
+   *
+   */
   componentDidMount() {
     const { endpoint } = this.props; //get the endpoint from the props;
     const { user } = this.props; // user is passed as a prop from the parent component
@@ -116,3 +132,8 @@ export class ChartLine extends Component {
 }
 
 export default ChartLine;
+
+ChartLine.propTypes = {
+  endpoint: PropTypes.string.isRequired,
+  user: PropTypes.string.isRequired,
+};

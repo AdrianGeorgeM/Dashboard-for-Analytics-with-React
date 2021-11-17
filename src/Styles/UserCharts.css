@@ -13,13 +13,13 @@
   flex-basis: 35%; /*35% of the parent width  (100% / 3)    (100% / 3)  = 33.33%    */
   height: 178px;
   position: relative;
-  border: 1px solid blue;
 }
 
 .radialChart__title {
+  margin: 0;
   position: absolute;
   top: 10%;
-  left: 15%;
+  left: 10%;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;

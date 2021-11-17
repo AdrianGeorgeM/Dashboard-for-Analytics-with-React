@@ -1,7 +1,13 @@
 import React, { Component } from "react";
 import "../Styles/Greeting.css";
 import fetchData from "../Api/api";
+import PropTypes from "prop-types";
 
+/**
+ * @description - Greeting component
+ * @param {object} props - Greeting component props
+ * @returns {JSX} - JSX representation of Greeting component
+ */
 export class Greeting extends Component {
   constructor(props) {
     super(props);
@@ -25,7 +31,6 @@ export class Greeting extends Component {
         items: response.data.userInfos,
         loading: false,
       });
-      console.log(response.data.userInfos.firstName);
     });
   }
   render() {
@@ -46,3 +51,6 @@ export class Greeting extends Component {
 }
 
 export default Greeting;
+Greeting.propTypes = {
+  user: PropTypes.string.isRequired,
+};
