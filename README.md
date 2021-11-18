@@ -49,6 +49,6 @@ You will also see any lint errors in the console.
 
 Only two users available for this project.
 
-You can change to any other user by changing the id in the index.js file with the following command:
-<App user='12' />//Karl
-<App user='18' />//Cecilia
+You can change to any other user by changing the id in the index.js App user="12" or App user="18" file with the following command:
+user='12' />//Karl
+user='18' />//Cecilia -->
