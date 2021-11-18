@@ -24,29 +24,35 @@ export class App extends Component {
     this.state = {
       items: {},
       loading: false,
-      error: null,
+      error: "error",
     };
   }
   componentDidMount() {
     fetchData(this.user, this.endpoint).then((response) => {
       this.setState({
         items: response.data,
-        loading: false,
+        loading: true,
+        error: "",
       });
     });
   }
   render() {
-    // const { error, isLoaded, data } = this.state;
-    return (
-      <div className='App'>
-        <Header user={this.user} />
-        <SideBar />
-        <Dashboard user={this.user} />
-      </div>
-    );
+    const { error, loading } = this.state; // destructuring the state object. data is the data that is returned from the API. error is the error that is returned from the API.  loading is the loading state of the API.
+    if (!loading) {
+      return <div>Loading</div>;
+    } else if (error) {
+      return <div>{error.message}</div>;
+    } else {
+      return (
+        <div className='App'>
+          <Header user={this.user} />
+          <SideBar />
+          <Dashboard user={this.user} />
+        </div>
+      );
+    }
   }
 }
-
 export default App;
 
 App.propTypes = {
