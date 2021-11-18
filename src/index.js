@@ -8,7 +8,7 @@ import reportWebVitals from "./reportWebVitals";
  */
 ReactDOM.render(
   <React.StrictMode>
-    <App user='18' />
+    <App user='12' /> {/* This is the user id */}
   </React.StrictMode>,
   document.getElementById("root")
 );
