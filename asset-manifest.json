@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/Dashboard-for-Analytics-with-React/static/css/main.978aea75.chunk.css",
-    "main.js": "/Dashboard-for-Analytics-with-React/static/js/main.fbc4a23c.chunk.js",
-    "main.js.map": "/Dashboard-for-Analytics-with-React/static/js/main.fbc4a23c.chunk.js.map",
-    "runtime-main.js": "/Dashboard-for-Analytics-with-React/static/js/runtime-main.510cee8f.js",
-    "runtime-main.js.map": "/Dashboard-for-Analytics-with-React/static/js/runtime-main.510cee8f.js.map",
-    "static/js/2.966a722e.chunk.js": "/Dashboard-for-Analytics-with-React/static/js/2.966a722e.chunk.js",
-    "static/js/2.966a722e.chunk.js.map": "/Dashboard-for-Analytics-with-React/static/js/2.966a722e.chunk.js.map",
-    "static/js/3.e41c3ed3.chunk.js": "/Dashboard-for-Analytics-with-React/static/js/3.e41c3ed3.chunk.js",
-    "static/js/3.e41c3ed3.chunk.js.map": "/Dashboard-for-Analytics-with-React/static/js/3.e41c3ed3.chunk.js.map",
+    "main.css": "/Dashboard-for-Analytics-with-React/static/css/main.d449ce52.chunk.css",
+    "main.js": "/Dashboard-for-Analytics-with-React/static/js/main.fe16b83c.chunk.js",
+    "main.js.map": "/Dashboard-for-Analytics-with-React/static/js/main.fe16b83c.chunk.js.map",
+    "runtime-main.js": "/Dashboard-for-Analytics-with-React/static/js/runtime-main.5030c9cb.js",
+    "runtime-main.js.map": "/Dashboard-for-Analytics-with-React/static/js/runtime-main.5030c9cb.js.map",
+    "static/js/2.49d3b53d.chunk.js": "/Dashboard-for-Analytics-with-React/static/js/2.49d3b53d.chunk.js",
+    "static/js/2.49d3b53d.chunk.js.map": "/Dashboard-for-Analytics-with-React/static/js/2.49d3b53d.chunk.js.map",
+    "static/js/3.6f9f17f3.chunk.js": "/Dashboard-for-Analytics-with-React/static/js/3.6f9f17f3.chunk.js",
+    "static/js/3.6f9f17f3.chunk.js.map": "/Dashboard-for-Analytics-with-React/static/js/3.6f9f17f3.chunk.js.map",
     "index.html": "/Dashboard-for-Analytics-with-React/index.html",
-    "static/css/main.978aea75.chunk.css.map": "/Dashboard-for-Analytics-with-React/static/css/main.978aea75.chunk.css.map",
-    "static/js/2.966a722e.chunk.js.LICENSE.txt": "/Dashboard-for-Analytics-with-React/static/js/2.966a722e.chunk.js.LICENSE.txt",
+    "static/css/main.d449ce52.chunk.css.map": "/Dashboard-for-Analytics-with-React/static/css/main.d449ce52.chunk.css.map",
+    "static/js/2.49d3b53d.chunk.js.LICENSE.txt": "/Dashboard-for-Analytics-with-React/static/js/2.49d3b53d.chunk.js.LICENSE.txt",
     "static/media/logo.96234258.svg": "/Dashboard-for-Analytics-with-React/static/media/logo.96234258.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.510cee8f.js",
-    "static/js/2.966a722e.chunk.js",
-    "static/css/main.978aea75.chunk.css",
-    "static/js/main.fbc4a23c.chunk.js"
+    "static/js/runtime-main.5030c9cb.js",
+    "static/js/2.49d3b53d.chunk.js",
+    "static/css/main.d449ce52.chunk.css",
+    "static/js/main.fe16b83c.chunk.js"
   ]
 }
