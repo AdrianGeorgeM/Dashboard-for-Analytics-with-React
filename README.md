@@ -52,3 +52,8 @@ Only two users available for this project.
 You can change to any other user by changing the id in the index.js App user="12" or App user="18" file with the following command:
 user='12' />//Karl
 user='18' />//Cecilia -->
+Or
+Start the local server and open the webpage in the browser:
+https://adriangeorgem.github.io/Dashboard-for-Analytics-with-React/
+
+it works togheter with the backend from localhost:3000
