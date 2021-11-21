@@ -89,8 +89,8 @@ export class ChartRadar extends Component {
               //tick properties
               fill: "#FFFFFF",
               fontWeight: "500",
-              fontSize: "12px",
-              lineHeigt: "24px",
+              fontSize: "9px",
+              lineHeigt: "20px",
             }}
             tickLine={false}
           />

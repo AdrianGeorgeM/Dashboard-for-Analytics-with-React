@@ -32,7 +32,7 @@ export class UserPerformance extends Component {
     return (
       <div className='infoCards'>
         <UserInfo
-          user={this.user}
+          user={this.user} //this.props.user
           data={this.state.items.calorieCount}
           unit='kCal'
           count='calorieCount'

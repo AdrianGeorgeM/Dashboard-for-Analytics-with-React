@@ -73,7 +73,7 @@ export class ChartBar extends Component {
       // exceptions from actual bugs in components.
       (error) => {
         this.setState({
-          loaded: true,
+          loaded: false,
           error: console.log(`error`, error),
         });
       }

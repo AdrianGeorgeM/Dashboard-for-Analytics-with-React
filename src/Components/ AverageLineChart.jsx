@@ -14,14 +14,15 @@ import "../Styles/AverageLineCharts.css";
 
 export class ChartLine extends Component {
   constructor(props) {
-    super(props);
+    // this is the constructor of the component and it is used to initialize the state of the component and it is called before the render method is called for the first time and it is used to set the initial state of the component and it is called before the render method is called for the first time
+    super(props); // this is used to call the parent constructor and pass the props to the parent constructor from the parent component (AverageLineChart)
 
     // const { endpoint } = this.props;
     // const { user } = this.props;
     this.endpoint = this.props.endpoint;
     this.user = this.props.user;
     this.state = {
-      items: {},
+      items: {}, // this is the state of the component and it is used to store the data that is fetched from the api and it is used to display the data on the chart and it is used to fetch the data from the api and it is used to set the state of the items
       loading: false,
       error: null,
     };
@@ -47,7 +48,7 @@ export class ChartLine extends Component {
 
   weekDay(day) {
     //what is let week
-    let week = { 1: "M", 2: "T", 3: "W", 4: "T", 5: "F", 6: "S", 7: "S" };
+    let week = { 1: "M", 2: "T", 3: "W", 4: "T", 5: "F", 6: "S", 7: "S" }; // this is the week day array that is used to display the week day in letters and it is used to get the week day from the number
 
     return week[day];
   } // this is used to change the week day from number to letters

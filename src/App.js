@@ -7,6 +7,7 @@ import SideBar from "./Pages/SideBar";
 import Dashboard from "./Pages/Dashboard";
 import fetchData from "./Api/api";
 
+// All React components must act like pure functions with respect to their props.
 /**
  * @class App // App is the main component of the application which is rendered in the index.html file and contains the Header and SideBar components.
  * @extends {Component} // App is a subclass of Component.

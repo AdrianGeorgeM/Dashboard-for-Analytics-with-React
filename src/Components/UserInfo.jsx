@@ -20,10 +20,11 @@ export class UserInfo extends Component {
     this.data = this.props.data; //values of the calories, proteins, carbs, lipids
     this.unit = this.props.unit; //unit of the calories, proteins, carbs, lipids
     this.images = {
-      calorieCount,
-      proteinCount,
-      carbohydrateCount,
-      lipidCount,
+      //images of the calories, proteins, carbs, lipids
+      calorieCount, //calories_icon.png
+      proteinCount, //protein_icon.png
+      carbohydrateCount, //carbs_icon.png
+      lipidCount, //lipids_icon.png
     };
   }
   render() {
@@ -50,11 +51,7 @@ export class UserInfo extends Component {
     );
   }
 }
-UserInfo.propTypes = {
-  user: PropTypes.string,
-  count: PropTypes.string,
-  data: PropTypes.number,
-};
+
 export default UserInfo;
 
 UserInfo.propTypes = {
